@@ -34,17 +34,17 @@ const data = {
 
     testimonial: [{
             id: 1,
-            userImage: images.testimonialAvatar,
-            userName: "Rachel Yamamoto",
-            userSubHeading: "Case Western Reserve University",
-            reviewText: "Our goal is to transform educational experiences by providing innovative and interactive web-based solutions that make learning inclusive and enjoyable for children from diverse communities.",
-        },
-        {
-            id: 2,
             userImage: images.testimonialAvatar2,
             userName: "Isha Das",
             userSubHeading: "Case Western Reserve University",
             reviewText: "Our vision is to empower the next generation of learners by creating an engaging web application that makes speech therapy accessible to children of all backgrounds.",
+        },
+        {
+            id: 2,
+            userImage: images.testimonialAvatar,
+            userName: "Rachel Yamamoto",
+            userSubHeading: "Case Western Reserve University",
+            reviewText: "Our goal is to transform educational experiences by providing innovative and interactive web-based solutions that make learning inclusive and enjoyable for children from diverse communities.",
         },
         {
             id: 3,
