@@ -6,16 +6,6 @@ export const onCreateUser = /* GraphQL */ `
     onCreateUser(filter: $filter) {
       id
       active
-      aboutMe
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
       therapist {
         id
         parent
@@ -33,7 +23,6 @@ export const onCreateUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      userPictureId
       userTherapistId
       userStudentId
       __typename
@@ -45,16 +34,6 @@ export const onUpdateUser = /* GraphQL */ `
     onUpdateUser(filter: $filter) {
       id
       active
-      aboutMe
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
       therapist {
         id
         parent
@@ -72,7 +51,6 @@ export const onUpdateUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      userPictureId
       userTherapistId
       userStudentId
       __typename
@@ -84,16 +62,6 @@ export const onDeleteUser = /* GraphQL */ `
     onDeleteUser(filter: $filter) {
       id
       active
-      aboutMe
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
       therapist {
         id
         parent
@@ -111,7 +79,6 @@ export const onDeleteUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      userPictureId
       userTherapistId
       userStudentId
       __typename
@@ -127,10 +94,8 @@ export const onCreateTherapist = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -160,10 +125,8 @@ export const onUpdateTherapist = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -193,10 +156,8 @@ export const onDeleteTherapist = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -224,10 +185,8 @@ export const onCreateStudent = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -258,10 +217,8 @@ export const onUpdateStudent = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -292,10 +249,8 @@ export const onDeleteStudent = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -436,14 +391,6 @@ export const onCreateExerciseProgress = /* GraphQL */ `
   ) {
     onCreateExerciseProgress(filter: $filter) {
       id
-      name
-      exercise {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
       student {
         id
         createdAt
@@ -458,7 +405,6 @@ export const onCreateExerciseProgress = /* GraphQL */ `
       studentID
       createdAt
       updatedAt
-      exerciseProgressExerciseId
       __typename
     }
   }
@@ -469,14 +415,6 @@ export const onUpdateExerciseProgress = /* GraphQL */ `
   ) {
     onUpdateExerciseProgress(filter: $filter) {
       id
-      name
-      exercise {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
       student {
         id
         createdAt
@@ -491,7 +429,6 @@ export const onUpdateExerciseProgress = /* GraphQL */ `
       studentID
       createdAt
       updatedAt
-      exerciseProgressExerciseId
       __typename
     }
   }
@@ -502,14 +439,6 @@ export const onDeleteExerciseProgress = /* GraphQL */ `
   ) {
     onDeleteExerciseProgress(filter: $filter) {
       id
-      name
-      exercise {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
       student {
         id
         createdAt
@@ -524,7 +453,6 @@ export const onDeleteExerciseProgress = /* GraphQL */ `
       studentID
       createdAt
       updatedAt
-      exerciseProgressExerciseId
       __typename
     }
   }
@@ -537,11 +465,9 @@ export const onCreateQuestionProgress = /* GraphQL */ `
       id
       exerciseProgress {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       question {
@@ -553,7 +479,6 @@ export const onCreateQuestionProgress = /* GraphQL */ `
         questionExampleId
         __typename
       }
-      description
       completed
       submissions {
         nextToken
@@ -575,11 +500,9 @@ export const onUpdateQuestionProgress = /* GraphQL */ `
       id
       exerciseProgress {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       question {
@@ -591,7 +514,6 @@ export const onUpdateQuestionProgress = /* GraphQL */ `
         questionExampleId
         __typename
       }
-      description
       completed
       submissions {
         nextToken
@@ -613,11 +535,9 @@ export const onDeleteQuestionProgress = /* GraphQL */ `
       id
       exerciseProgress {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       question {
@@ -629,7 +549,6 @@ export const onDeleteQuestionProgress = /* GraphQL */ `
         questionExampleId
         __typename
       }
-      description
       completed
       submissions {
         nextToken
@@ -689,22 +608,9 @@ export const onCreatePostInfo = /* GraphQL */ `
       tags
       description
       likes
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
-      fname
-      lname
-      email
       id
       createdAt
       updatedAt
-      postInfoPictureId
       __typename
     }
   }
@@ -716,22 +622,9 @@ export const onUpdatePostInfo = /* GraphQL */ `
       tags
       description
       likes
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
-      fname
-      lname
-      email
       id
       createdAt
       updatedAt
-      postInfoPictureId
       __typename
     }
   }
@@ -743,64 +636,6 @@ export const onDeletePostInfo = /* GraphQL */ `
       tags
       description
       likes
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
-      fname
-      lname
-      email
-      id
-      createdAt
-      updatedAt
-      postInfoPictureId
-      __typename
-    }
-  }
-`;
-export const onCreateComments = /* GraphQL */ `
-  subscription OnCreateComments($filter: ModelSubscriptionCommentsFilterInput) {
-    onCreateComments(filter: $filter) {
-      description
-      fname
-      lname
-      email
-      idpost
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateComments = /* GraphQL */ `
-  subscription OnUpdateComments($filter: ModelSubscriptionCommentsFilterInput) {
-    onUpdateComments(filter: $filter) {
-      description
-      fname
-      lname
-      email
-      idpost
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteComments = /* GraphQL */ `
-  subscription OnDeleteComments($filter: ModelSubscriptionCommentsFilterInput) {
-    onDeleteComments(filter: $filter) {
-      description
-      fname
-      lname
-      email
-      idpost
       id
       createdAt
       updatedAt

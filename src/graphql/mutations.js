@@ -9,16 +9,6 @@ export const createUser = /* GraphQL */ `
     createUser(input: $input, condition: $condition) {
       id
       active
-      aboutMe
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
       therapist {
         id
         parent
@@ -36,7 +26,6 @@ export const createUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      userPictureId
       userTherapistId
       userStudentId
       __typename
@@ -51,16 +40,6 @@ export const updateUser = /* GraphQL */ `
     updateUser(input: $input, condition: $condition) {
       id
       active
-      aboutMe
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
       therapist {
         id
         parent
@@ -78,7 +57,6 @@ export const updateUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      userPictureId
       userTherapistId
       userStudentId
       __typename
@@ -93,16 +71,6 @@ export const deleteUser = /* GraphQL */ `
     deleteUser(input: $input, condition: $condition) {
       id
       active
-      aboutMe
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
       therapist {
         id
         parent
@@ -120,7 +88,6 @@ export const deleteUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      userPictureId
       userTherapistId
       userStudentId
       __typename
@@ -137,10 +104,8 @@ export const createTherapist = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -171,10 +136,8 @@ export const updateTherapist = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -205,10 +168,8 @@ export const deleteTherapist = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -239,10 +200,8 @@ export const createStudent = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -276,10 +235,8 @@ export const updateStudent = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -313,10 +270,8 @@ export const deleteStudent = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -476,14 +431,6 @@ export const createExerciseProgress = /* GraphQL */ `
   ) {
     createExerciseProgress(input: $input, condition: $condition) {
       id
-      name
-      exercise {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
       student {
         id
         createdAt
@@ -498,7 +445,6 @@ export const createExerciseProgress = /* GraphQL */ `
       studentID
       createdAt
       updatedAt
-      exerciseProgressExerciseId
       __typename
     }
   }
@@ -510,14 +456,6 @@ export const updateExerciseProgress = /* GraphQL */ `
   ) {
     updateExerciseProgress(input: $input, condition: $condition) {
       id
-      name
-      exercise {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
       student {
         id
         createdAt
@@ -532,7 +470,6 @@ export const updateExerciseProgress = /* GraphQL */ `
       studentID
       createdAt
       updatedAt
-      exerciseProgressExerciseId
       __typename
     }
   }
@@ -544,14 +481,6 @@ export const deleteExerciseProgress = /* GraphQL */ `
   ) {
     deleteExerciseProgress(input: $input, condition: $condition) {
       id
-      name
-      exercise {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
       student {
         id
         createdAt
@@ -566,7 +495,6 @@ export const deleteExerciseProgress = /* GraphQL */ `
       studentID
       createdAt
       updatedAt
-      exerciseProgressExerciseId
       __typename
     }
   }
@@ -580,11 +508,9 @@ export const createQuestionProgress = /* GraphQL */ `
       id
       exerciseProgress {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       question {
@@ -596,7 +522,6 @@ export const createQuestionProgress = /* GraphQL */ `
         questionExampleId
         __typename
       }
-      description
       completed
       submissions {
         nextToken
@@ -619,11 +544,9 @@ export const updateQuestionProgress = /* GraphQL */ `
       id
       exerciseProgress {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       question {
@@ -635,7 +558,6 @@ export const updateQuestionProgress = /* GraphQL */ `
         questionExampleId
         __typename
       }
-      description
       completed
       submissions {
         nextToken
@@ -658,11 +580,9 @@ export const deleteQuestionProgress = /* GraphQL */ `
       id
       exerciseProgress {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       question {
@@ -674,7 +594,6 @@ export const deleteQuestionProgress = /* GraphQL */ `
         questionExampleId
         __typename
       }
-      description
       completed
       submissions {
         nextToken
@@ -746,22 +665,9 @@ export const createPostInfo = /* GraphQL */ `
       tags
       description
       likes
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
-      fname
-      lname
-      email
       id
       createdAt
       updatedAt
-      postInfoPictureId
       __typename
     }
   }
@@ -776,22 +682,9 @@ export const updatePostInfo = /* GraphQL */ `
       tags
       description
       likes
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
-      fname
-      lname
-      email
       id
       createdAt
       updatedAt
-      postInfoPictureId
       __typename
     }
   }
@@ -806,73 +699,6 @@ export const deletePostInfo = /* GraphQL */ `
       tags
       description
       likes
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
-      fname
-      lname
-      email
-      id
-      createdAt
-      updatedAt
-      postInfoPictureId
-      __typename
-    }
-  }
-`;
-export const createComments = /* GraphQL */ `
-  mutation CreateComments(
-    $input: CreateCommentsInput!
-    $condition: ModelCommentsConditionInput
-  ) {
-    createComments(input: $input, condition: $condition) {
-      description
-      fname
-      lname
-      email
-      idpost
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updateComments = /* GraphQL */ `
-  mutation UpdateComments(
-    $input: UpdateCommentsInput!
-    $condition: ModelCommentsConditionInput
-  ) {
-    updateComments(input: $input, condition: $condition) {
-      description
-      fname
-      lname
-      email
-      idpost
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deleteComments = /* GraphQL */ `
-  mutation DeleteComments(
-    $input: DeleteCommentsInput!
-    $condition: ModelCommentsConditionInput
-  ) {
-    deleteComments(input: $input, condition: $condition) {
-      description
-      fname
-      lname
-      email
-      idpost
       id
       createdAt
       updatedAt

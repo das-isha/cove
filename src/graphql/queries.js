@@ -6,16 +6,6 @@ export const getUser = /* GraphQL */ `
     getUser(id: $id) {
       id
       active
-      aboutMe
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
       therapist {
         id
         parent
@@ -33,7 +23,6 @@ export const getUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      userPictureId
       userTherapistId
       userStudentId
       __typename
@@ -50,10 +39,8 @@ export const listUsers = /* GraphQL */ `
       items {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -70,10 +57,8 @@ export const getTherapist = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -121,10 +106,8 @@ export const getStudent = /* GraphQL */ `
       user {
         id
         active
-        aboutMe
         createdAt
         updatedAt
-        userPictureId
         userTherapistId
         userStudentId
         __typename
@@ -277,14 +260,6 @@ export const getExerciseProgress = /* GraphQL */ `
   query GetExerciseProgress($id: ID!) {
     getExerciseProgress(id: $id) {
       id
-      name
-      exercise {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
       student {
         id
         createdAt
@@ -299,7 +274,6 @@ export const getExerciseProgress = /* GraphQL */ `
       studentID
       createdAt
       updatedAt
-      exerciseProgressExerciseId
       __typename
     }
   }
@@ -317,11 +291,9 @@ export const listExerciseProgresses = /* GraphQL */ `
     ) {
       items {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       nextToken
@@ -346,11 +318,9 @@ export const exerciseProgressesByStudentID = /* GraphQL */ `
     ) {
       items {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       nextToken
@@ -364,11 +334,9 @@ export const getQuestionProgress = /* GraphQL */ `
       id
       exerciseProgress {
         id
-        name
         studentID
         createdAt
         updatedAt
-        exerciseProgressExerciseId
         __typename
       }
       question {
@@ -380,7 +348,6 @@ export const getQuestionProgress = /* GraphQL */ `
         questionExampleId
         __typename
       }
-      description
       completed
       submissions {
         nextToken
@@ -407,7 +374,6 @@ export const listQuestionProgresses = /* GraphQL */ `
     ) {
       items {
         id
-        description
         completed
         exerciseprogressID
         createdAt
@@ -437,7 +403,6 @@ export const questionProgressesByExerciseprogressID = /* GraphQL */ `
     ) {
       items {
         id
-        description
         completed
         exerciseprogressID
         createdAt
@@ -520,22 +485,9 @@ export const getPostInfo = /* GraphQL */ `
       tags
       description
       likes
-      picture {
-        id
-        name
-        key
-        questionprogressID
-        createdAt
-        updatedAt
-        __typename
-      }
-      fname
-      lname
-      email
       id
       createdAt
       updatedAt
-      postInfoPictureId
       __typename
     }
   }
@@ -552,48 +504,6 @@ export const listPostInfos = /* GraphQL */ `
         tags
         description
         likes
-        fname
-        lname
-        email
-        id
-        createdAt
-        updatedAt
-        postInfoPictureId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const getComments = /* GraphQL */ `
-  query GetComments($id: ID!) {
-    getComments(id: $id) {
-      description
-      fname
-      lname
-      email
-      idpost
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const listComments = /* GraphQL */ `
-  query ListComments(
-    $filter: ModelCommentsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        description
-        fname
-        lname
-        email
-        idpost
         id
         createdAt
         updatedAt
